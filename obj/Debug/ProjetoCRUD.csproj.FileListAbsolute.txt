@@ -1,0 +1,7 @@
+C:\Users\diego\source\repos\ProjetoCRUD\bin\Debug\ProjetoCRUD.exe.config
+C:\Users\diego\source\repos\ProjetoCRUD\bin\Debug\ProjetoCRUD.exe
+C:\Users\diego\source\repos\ProjetoCRUD\bin\Debug\ProjetoCRUD.pdb
+C:\Users\diego\source\repos\ProjetoCRUD\obj\Debug\ProjetoCRUD.csproj.AssemblyReference.cache
+C:\Users\diego\source\repos\ProjetoCRUD\obj\Debug\ProjetoCRUD.csproj.CoreCompileInputs.cache
+C:\Users\diego\source\repos\ProjetoCRUD\obj\Debug\ProjetoCRUD.exe
+C:\Users\diego\source\repos\ProjetoCRUD\obj\Debug\ProjetoCRUD.pdb

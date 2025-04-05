@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\diego\\source\\repos\\ProjetoCRUD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A92830A-879A-45D3-A089-81DF83B109A2}|ProjetoCRUD.csproj|c:\\users\\diego\\source\\repos\\projetocrud\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A92830A-879A-45D3-A089-81DF83B109A2}|ProjetoCRUD.csproj|solutionrelative:userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A92830A-879A-45D3-A089-81DF83B109A2}|ProjetoCRUD.csproj|C:\\Users\\diego\\source\\repos\\ProjetoCRUD\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A92830A-879A-45D3-A089-81DF83B109A2}|ProjetoCRUD.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A92830A-879A-45D3-A089-81DF83B109A2}|ProjetoCRUD.csproj|c:\\users\\diego\\source\\repos\\projetocrud\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3A92830A-879A-45D3-A089-81DF83B109A2}|ProjetoCRUD.csproj|C:\\Users\\diego\\source\\repos\\ProjetoCRUD\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A92830A-879A-45D3-A089-81DF83B109A2}|ProjetoCRUD.csproj|solutionrelative:userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A92830A-879A-45D3-A089-81DF83B109A2}|ProjetoCRUD.csproj|c:\\users\\diego\\source\\repos\\projetocrud\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A92830A-879A-45D3-A089-81DF83B109A2}|ProjetoCRUD.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A92830A-879A-45D3-A089-81DF83B109A2}|ProjetoCRUD.csproj|c:\\users\\diego\\source\\repos\\projetocrud\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A92830A-879A-45D3-A089-81DF83B109A2}|ProjetoCRUD.csproj|solutionrelative:userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,17 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 265,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\diego\\source\\repos\\ProjetoCRUD\\UserRepository.cs",
               "RelativeDocumentMoniker": "UserRepository.cs",
               "ToolTip": "C:\\Users\\diego\\source\\repos\\ProjetoCRUD\\UserRepository.cs",
               "RelativeToolTip": "UserRepository.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAwwD4AAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAFwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-05T17:02:41.955Z",
               "EditorCaption": ""
@@ -45,20 +45,20 @@
               "RelativeDocumentMoniker": "UserViewModel.cs",
               "ToolTip": "C:\\Users\\diego\\source\\repos\\ProjetoCRUD\\UserViewModel.cs",
               "RelativeToolTip": "UserViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-05T16:57:03.412Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\diego\\source\\repos\\ProjetoCRUD\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\diego\\source\\repos\\ProjetoCRUD\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAgwEMAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-05T16:31:28.884Z",
               "EditorCaption": ""

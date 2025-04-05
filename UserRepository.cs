@@ -1,11 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace ProjetoCRUD
 {
@@ -91,20 +87,19 @@ namespace ProjetoCRUD
             }
         }
 
-
-        public void GetUser()
+        public List<UserViewModel> GetUsers()
         {
-
-            List<UserViewModel> p_List = new List<UserViewModel>();
-
-            string l_Sql = "SELECT * FROM TB_USER";
-
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            try
             {
-                connection.Open();
+                List<UserViewModel> p_List = new List<UserViewModel>();
 
-                using (SqlCommand cmd = new SqlCommand(l_Sql, connection))
+                string l_Sql = "SELECT * FROM TB_USER";
+
+                using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
+                    connection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(l_Sql, connection))
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -112,20 +107,37 @@ namespace ProjetoCRUD
                             UserViewModel user = new UserViewModel
                             {
                                 ID = Convert.IsDBNull(reader["ID"]) ? 0 : Convert.ToInt32(reader["ID"]),
-                                Name = Convert.IsDBNull(reader["NAME"]) ? "" : reader["NAME"].ToString(),
+                                Name = Convert.IsDBNull(reader["NAME"]) ? string.Empty : reader["NAME"].ToString(),
                                 Birthday = Convert.IsDBNull(reader["BIRTHDAY"]) ? DateTime.MinValue : Convert.ToDateTime(reader["BIRTHDAY"]),
-                                Email = Convert.IsDBNull(reader["EMAIL"]) ? "" : reader["EMAIL"].ToString(),
-                                Gender = Convert.IsDBNull(reader["GENDER"]) ? "" : reader["GENDER"].ToString()
+                                Email = Convert.IsDBNull(reader["EMAIL"]) ? string.Empty : reader["EMAIL"].ToString(),
+                                Gender = Convert.IsDBNull(reader["GENDER"]) ? string.Empty : reader["GENDER"].ToString()
                             };
 
                             p_List.Add(user);
                         }
                     }
                 }
-            }
 
+                return p_List;
+
+            }
+            catch (Exception ex) 
+            {
+                Console.WriteLine("Erro ao consultar usuarios: " + ex.Message);
+
+                // Caso de erro, retornamos a lista vazia
+                return new List<UserViewModel>();
+
+                // Caso de erro, jogamos para o método que chamou GetUsers, apartir dali ele se virar para tratar o problema.
+                //throw; 
+            }
         }
 
+        /// <summary>
+        /// Método para obter o próximo ID da tabela de usuários
+        /// </summary>
+        /// <param name="p_Connection"></param>
+        /// <returns>Id do usuário</returns>
         public int GetNextID(SqlConnection p_Connection)
         {
             string sql = "SELECT ISNULL(MAX(ID), 0) + 1 FROM TB_USER";
@@ -134,7 +146,6 @@ namespace ProjetoCRUD
             {
                 return (int)cmd.ExecuteScalar();
             }
-
         }
 
     }
