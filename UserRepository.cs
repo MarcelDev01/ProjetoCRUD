@@ -33,7 +33,7 @@ namespace ProjetoCRUD
                 {
                     //Atribuição nos parametros da query
                     cmd.Parameters.AddWithValue("@Nome", p_Data.Name);
-                    cmd.Parameters.AddWithValue("@Nascimento", p_Data.Birthday.ToString());
+                    cmd.Parameters.AddWithValue("@Nascimento", p_Data.Birthday);
                     cmd.Parameters.AddWithValue("@Email", p_Data.Email);
                     cmd.Parameters.AddWithValue("@Genero", p_Data.Gender);
                     cmd.Parameters.AddWithValue("@Id", l_NextId);
@@ -41,6 +41,7 @@ namespace ProjetoCRUD
                     //Executa
                     int linhasAfetadas = cmd.ExecuteNonQuery();
                     Console.WriteLine($"{linhasAfetadas} linha(s) inserida(s).");
+                    Console.WriteLine("");
                 }
             }
         }
@@ -61,6 +62,7 @@ namespace ProjetoCRUD
                     //Executa
                     int linhasAfetadas = cmd.ExecuteNonQuery();
                     Console.WriteLine($"{linhasAfetadas} linha(s) excluida(s).");
+                    Console.WriteLine("");
                 }
             }
         }
@@ -76,13 +78,14 @@ namespace ProjetoCRUD
                 using (SqlCommand cmd = new SqlCommand(l_Sql, connection))
                 {
                     cmd.Parameters.AddWithValue("@Nome", p_Data.Name);
-                    cmd.Parameters.AddWithValue("@Nascimento", p_Data.Birthday.ToString());
+                    cmd.Parameters.AddWithValue("@Nascimento", p_Data.Birthday);
                     cmd.Parameters.AddWithValue("@Email", p_Data.Email);
                     cmd.Parameters.AddWithValue("@Genero", p_Data.Gender);
                     cmd.Parameters.AddWithValue("@Id", p_Data.ID);
 
                     int linhasAfetadas = cmd.ExecuteNonQuery();
                     Console.WriteLine($"{linhasAfetadas} linha(s) atualizada(s).");
+                    Console.WriteLine("");
                 }
             }
         }
