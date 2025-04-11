@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
@@ -7,13 +6,18 @@ namespace ProjetoCRUD
 {
     public class UserRepository 
     {
+        #region Properties
         private string _connectionString;
+        #endregion
 
+        #region Contructor
         public UserRepository(string connectionString)
         {
             _connectionString = connectionString;
         }
+        #endregion
 
+        #region Methods CRUD
         public void CreateUser(UserViewModel p_Data)
         {
 
@@ -40,8 +44,7 @@ namespace ProjetoCRUD
 
                     //Executa
                     int linhasAfetadas = cmd.ExecuteNonQuery();
-                    Console.WriteLine($"{linhasAfetadas} linha(s) inserida(s).");
-                    Console.WriteLine("");
+                    MessageSuccess(linhasAfetadas, (int)MessageType.CREATE);
                 }
             }
         }
@@ -59,10 +62,8 @@ namespace ProjetoCRUD
                 {
                     cmd.Parameters.AddWithValue("@Id", p_Id);
 
-                    //Executa
                     int linhasAfetadas = cmd.ExecuteNonQuery();
-                    Console.WriteLine($"{linhasAfetadas} linha(s) excluida(s).");
-                    Console.WriteLine("");
+                    MessageSuccess(linhasAfetadas, (int)MessageType.DELETE);
                 }
             }
         }
@@ -84,8 +85,7 @@ namespace ProjetoCRUD
                     cmd.Parameters.AddWithValue("@Id", p_Data.ID);
 
                     int linhasAfetadas = cmd.ExecuteNonQuery();
-                    Console.WriteLine($"{linhasAfetadas} linha(s) atualizada(s).");
-                    Console.WriteLine("");
+                    MessageSuccess(linhasAfetadas, (int)MessageType.UPDATE);
                 }
             }
         }
@@ -135,7 +135,9 @@ namespace ProjetoCRUD
                 //throw; 
             }
         }
+        #endregion
 
+        #region Methods Support
         /// <summary>
         /// Método para obter o próximo ID da tabela de usuários
         /// </summary>
@@ -151,5 +153,32 @@ namespace ProjetoCRUD
             }
         }
 
+        private void MessageSuccess(int p_LinhasAfetadas, int p_MessageId)
+        {
+            Console.WriteLine("");
+
+            switch (p_MessageId)
+            {
+                case (int)MessageType.CREATE:
+                    Console.WriteLine($"{p_LinhasAfetadas} linha(s) inserida(s).");
+                    break;
+                case (int)MessageType.DELETE:
+                    Console.WriteLine($"{p_LinhasAfetadas} linha(s) excluida(s).");
+                    break;
+                case (int)MessageType.UPDATE:
+                    Console.WriteLine($"{p_LinhasAfetadas} linha(s) atualizada(s).");
+                    break;
+            }
+
+            Console.WriteLine("");
+        }
+
+        public enum MessageType
+        {
+            CREATE = 1,
+            DELETE = 2,
+            UPDATE = 3,
+        }
+        #endregion
     }
 }

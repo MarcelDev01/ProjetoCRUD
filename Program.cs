@@ -1,13 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
-using System.Data.Common;
-using System.Xml.Linq;
-using System.Collections;
 
 namespace ProjetoCRUD
 {
@@ -30,24 +22,30 @@ namespace ProjetoCRUD
 
             l_NumberOption = GetOptions();
 
-            if (l_NumberOption == 1)
+            while (l_NumberOption == (int)UserRepository.MessageType.CREATE || 
+                   l_NumberOption == (int)UserRepository.MessageType.DELETE || 
+                   l_NumberOption == (int)UserRepository.MessageType.UPDATE)
             {
-                CreateUserData(l_Data, l_Connection);
-            }
-            if (l_NumberOption == 2)
-            {
-                DeleteUserData(l_Connection, l_Data.ID);
-            }
-            if (l_NumberOption == 3)
-            {
-                UpdateUserData(l_Connection, l_Data);
-            }
 
-            l_List = l_Connection.GetUsers();
+                switch (l_NumberOption)
+                {
+                    case (int)UserRepository.MessageType.CREATE:
+                        CreateUserData(l_Data, l_Connection);
+                        break;
+                    case (int)UserRepository.MessageType.DELETE:
+                        DeleteUserData(l_Connection, l_Data.ID);
+                        break;
+                    case (int)UserRepository.MessageType.UPDATE:
+                        UpdateUserData(l_Connection, l_Data);
+                        break;
+                }
 
-            GetTemplateListUser(l_List);
+                l_List = l_Connection.GetUsers();
 
-            l_NumberOption = GetOptions();
+                GetTemplateListUser(l_List);
+
+                l_NumberOption = GetOptions();
+            }
         }
 
         static void GetTemplateListUser(List<UserViewModel> p_List)
